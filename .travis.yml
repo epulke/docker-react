@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t epulke/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run epulke/docker-react npm run test -- -- coverage
