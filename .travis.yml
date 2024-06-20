@@ -7,3 +7,6 @@ services:
 
 before_install:
   - docker build -t epulke/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true epulke/docker-react npm run test
